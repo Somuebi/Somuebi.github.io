@@ -34,12 +34,29 @@ header {
 }
 
 nav {
+  background-color: var(--charcoal);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 /* TODO: Style nav links and logo here */
+nav a {
+  color: var(--pink);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--charcoal);
+  color: var(--white);
+}
+
+nav a.active {
+  background-color: var(--charcoal);
+  color: var(--mint);
+}
 
 /* =====================
    👋 HERO SECTION
