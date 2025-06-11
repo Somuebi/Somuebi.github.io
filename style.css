@@ -1,0 +1,107 @@
+/* =====================
+   🎨 BASE COLORS
+   ===================== */
+:root {
+  --white: #ffffff;
+  --mint: #adffbf;
+  --purple: #850aff;
+  --pink: #f8dde4;
+  --charcoal: #232528;
+}
+
+/* =====================
+   🔤 FONTS
+   ===================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--white);
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+/* =====================
+   🧭 NAVIGATION
+   ===================== */
+header {
+  background-color: var(--white);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TODO: Style nav links and logo here */
+
+/* =====================
+   👋 HERO SECTION
+   ===================== */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('assets/images/world-map.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 4rem 2rem;
+}
+
+#hero h1 {
+  font-family: 'Sora', sans-serif;
+  font-size: 3rem;
+  color: var(--purple);
+}
+
+/* TODO: Add overlay tint, hover effect for map lights, and CTA button */
+
+/* =====================
+   💼 PROJECTS SECTION
+   ===================== */
+#projects {
+  padding: 4rem 2rem;
+  background-color: var(--mint);
+}
+
+/* TODO: Add project card styles here */
+
+/* =====================
+   🙋 ABOUT SECTION
+   ===================== */
+#about {
+  padding: 4rem 2rem;
+  background-color: var(--pink);
+}
+
+/* =====================
+   📬 CONTACT SECTION
+   ===================== */
+#contact {
+  padding: 4rem 2rem;
+  background-color: var(--white);
+}
+
+/* =====================
+   🚀 FOOTER
+   ===================== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--charcoal);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+/* =====================
+   📱 RESPONSIVE STYLES
+   ===================== */
+/* TODO: Add media queries for responsiveness below */
