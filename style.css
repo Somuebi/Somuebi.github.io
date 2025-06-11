@@ -40,6 +40,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
+  padding: 1rem 2rem;
 }
 
 /* TODO: Style nav links and logo here */
@@ -63,6 +64,11 @@ nav a.active {
   font-size: 1.5rem;
   color: var(--mint);
   font-weight: bold;
+}
+
+.nav-links{
+  display: flex;
+  gap: 1rem;
 }
 
 /* =====================
