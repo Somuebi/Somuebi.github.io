@@ -74,6 +74,7 @@ nav a.active {
 /* =====================
    👋 HERO SECTION
    ===================== */
+/* HERO SECTION */
 #hero {
   position: relative;
   height: 100vh;
@@ -81,13 +82,6 @@ nav a.active {
   overflow: hidden;
 }
 
-#hero h1 {
-  font-family: 'Sora', sans-serif;
-  font-size: 3rem;
-  color: var(--purple);
-}
-
-/* TODO: Add overlay tint, hover effect for map lights, and CTA button */
 .hero-overlay {
   position: relative;
   width: 100%;
