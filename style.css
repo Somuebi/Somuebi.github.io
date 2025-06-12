@@ -72,78 +72,75 @@ nav a.active {
 }
 
 /* =====================
-   👋 HERO SECTION
+   👋 PUZZLE HERO SECTION
    ===================== */
 /* HERO SECTION */
-#hero {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-overlay {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(35, 37, 40, 0.8); /* deep charcoal tint */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-}
-
-.world-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.3;
-  z-index: 0;
-  transition: opacity 0.3s ease;
-}
-
-.world-map:hover {
-  opacity: 0.5;
-  filter: drop-shadow(0 0 20px var(--mint));
-}
-
-/* HERO CONTENT */
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: var(--white);
-  font-family: 'Sora', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: var(--charcoal);
 }
 
 .hero-content h1 {
-  font-size: 3rem;
+  font-family: 'Sora', sans-serif;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
   font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* CTA BUTTON */
 .cta-btn {
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  background-color: var(--mint);
-  color: var(--charcoal);
-  border: none;
-  border-radius: 0.5rem;
+  background-color: var(--purple);
+  color: var(--white);
   text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .cta-btn:hover {
-  background-color: var(--white);
+  background-color: var(--charcoal);
+}
+
+.puzzle-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.puzzle-piece {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease;
+  padding: 1rem 2rem;
+  background-color: var(--mint);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+/* Customize each piece's initial position */
+.piece-1 { top: 10%; left: 10%; }
+.piece-2 { top: 30%; right: 15%; }
+.piece-3 { top: 50%; left: 40%; }
+.piece-4 { top: 70%; right: 20%; }
+.piece-5 { top: 85%; left: 15%; }
+
+/* Animation-in class */
+.puzzle-piece.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =====================
