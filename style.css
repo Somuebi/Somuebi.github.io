@@ -72,75 +72,79 @@ nav a.active {
 }
 
 /* =====================
-   👋 PUZZLE HERO SECTION
+   👋 HERO SECTION
    ===================== */
-/* HERO SECTION */
-.hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: 10;
-  color: var(--charcoal);
-}
-
-.hero-content h1 {
-  font-family: 'Sora', sans-serif;
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero-content p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.cta-btn {
-  padding: 0.75rem 1.5rem;
-  background-color: var(--purple);
-  color: var(--white);
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.cta-btn:hover {
-  background-color: var(--charcoal);
-}
-
-.puzzle-container {
+/* Hero Section */
+#hero {
   position: relative;
-  width: 100%;
+  background: url('assets/images/world-map.png') no-repeat center center/cover;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   overflow: hidden;
 }
 
-.puzzle-piece {
+.hero-overlay {
+  background-color: rgba(35, 37, 40, 0.6); /* Soft dark overlay */
   position: absolute;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 1s ease;
-  padding: 1rem 2rem;
-  background-color: var(--mint);
-  border-radius: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: bold;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-/* Customize each piece's initial position */
-.piece-1 { top: 10%; left: 10%; }
-.piece-2 { top: 30%; right: 15%; }
-.piece-3 { top: 50%; left: 40%; }
-.piece-4 { top: 70%; right: 20%; }
-.piece-5 { top: 85%; left: 15%; }
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+}
 
-/* Animation-in class */
-.puzzle-piece.animate-in {
-  opacity: 1;
-  transform: translateY(0);
+.hero-content h1 {
+  font-size: 3rem;
+  font-family: 'Sora', sans-serif;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  font-family: 'Poppins', sans-serif;
+  color: var(--pink);
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background-color: var(--mint);
+  color: var(--charcoal);
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--white);
+  transform: scale(1.05);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* =====================

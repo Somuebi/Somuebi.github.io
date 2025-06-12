@@ -1,24 +1,10 @@
-// Animate puzzle pieces on load
-window.addEventListener("load", () => {
-  const pieces = document.querySelectorAll(".puzzle-piece");
-  pieces.forEach((piece, index) => {
-    setTimeout(() => {
-      piece.classList.add("animate-in");
-    }, index * 300); // delay each piece slightly
+// smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href'))
+      .scrollIntoView({ behavior: 'smooth' });
   });
-});
-
-// Stop animation on scroll
-let animationStopped = false;
-
-window.addEventListener("scroll", () => {
-  if (!animationStopped) {
-    const pieces = document.querySelectorAll(".puzzle-piece");
-    pieces.forEach(piece => {
-      piece.style.transition = "none";
-    });
-    animationStopped = true;
-  }
 });
 
 
