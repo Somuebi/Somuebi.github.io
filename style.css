@@ -35,7 +35,7 @@ header {
 
 nav {
   width: 100%;
-  background-color: var(--charcoal);
+  background-color: var(--purple);
   display: flex;
   justify-content: space-between;
   align-items: center;
