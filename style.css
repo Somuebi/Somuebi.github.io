@@ -44,7 +44,7 @@ nav {
   height: fit-content;
 }
 
-/* TODO: Style nav links and logo here */
+/* DONE: Style nav links and logo here */
 nav a {
   color: var(--pink);
   text-decoration: none;
@@ -79,6 +79,9 @@ nav a.active {
 #hero {
   position: relative;
   background: url('assets/images/world-map.png') no-repeat center center/cover;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -88,7 +91,7 @@ nav a.active {
 }
 
 .hero-overlay {
-  background-color: rgba(35, 37, 40, 0.6); /* Soft dark overlay */
+  background-color: rgba(35, 37, 40, 0.6); 
   position: absolute;
   top: 0;
   left: 0;
@@ -129,7 +132,7 @@ nav a.active {
 }
 
 .cta-btn:hover {
-  background-color: var(--white);
+  background-color: var(--pink);
   transform: scale(1.05);
 }
 
@@ -147,6 +150,37 @@ nav a.active {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
   }
+
+  /* MAP MARKERS */
+.map-marker {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: var(--mint);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.map-marker::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--charcoal);
+  color: var(--mint);
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  border-radius: 5px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.map-marker:hover::after {
+  opacity: 1;
+}
 }
 
 /* =====================
