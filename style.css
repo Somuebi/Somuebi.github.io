@@ -25,7 +25,7 @@ body {
    🧭 NAVIGATION
    ===================== */
 header {
-  background-color: var(--purple);
+  background-color: var(--charcoal);
   padding: 1rem 2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -36,7 +36,7 @@ header {
 nav {
   height: 60px;
   width: 100%;
-  background-color: var(--purple);
+  background-color: var(--charcoal);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,7 +92,7 @@ nav a.active {
 }
 
 .hero-overlay {
-  background-color: rgba(35, 37, 40, 0.6); 
+  background-color: rgba(20, 21, 21, 0.6); 
   position: absolute;
   top: 0;
   left: 0;
@@ -102,8 +102,11 @@ nav a.active {
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  display: flex;
+  text-align: center;
+  justify-content: center;
   padding: 2rem;
 }
 
