@@ -100,12 +100,13 @@ nav a.active {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 4rem;
+  padding: 2rem;
 }
 
 .hero-content h1 {
   font-size: 3rem;
   font-family: 'Sora', sans-serif;
+  transform: translateY(-10%)
 }
 
 .hero-content p {
