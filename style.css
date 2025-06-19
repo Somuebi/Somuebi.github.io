@@ -106,7 +106,7 @@ nav a.active {
 .hero-content h1 {
   font-size: 3rem;
   font-family: 'Sora', sans-serif;
-  transform: translateY(-10%)
+  transform: translateY(-20%);
 }
 
 .hero-content p {
