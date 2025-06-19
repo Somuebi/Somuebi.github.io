@@ -106,13 +106,13 @@ nav a.active {
 .hero-content h1 {
   font-size: 3rem;
   font-family: 'Sora', sans-serif;
-  transform: translateY(-30%);
+  transform: translateY(-50%);
 }
 
 .hero-content p {
   font-size: 1.25rem;
   margin: 1rem 0;
-  transform: translateY(-30%);
+  transform: translateY(-50%);
 }
 
 .cta-btn {
@@ -123,7 +123,7 @@ nav a.active {
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  transform: translateY(-30%);
+  transform: translateY(-50%);
 }
 
 .cta-btn:hover {
