@@ -100,7 +100,8 @@ nav a.active {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
+  padding-top: 2rem;
 }
 
 .hero-content h1 {
