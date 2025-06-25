@@ -179,16 +179,6 @@ nav a.active {
 }
 
 /* =====================
-   💼 PROJECTS SECTION
-   ===================== */
-#projects {
-  padding: 4rem 2rem;
-  background-color: var(--mint);
-}
-
-/* TODO: Add project card styles here */
-
-/* =====================
    🙋 ABOUT SECTION
    ===================== */
 #about {
@@ -239,6 +229,17 @@ nav a.active {
     justify-content: center;
   }
 }
+
+/* =====================
+   💼 PROJECTS SECTION
+   ===================== */
+#projects {
+  padding: 4rem 2rem;
+  background-color: var(--mint);
+}
+
+/* TODO: Add project card styles here */
+
 
 /* =====================
    📬 CONTACT SECTION
