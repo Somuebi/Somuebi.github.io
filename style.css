@@ -194,6 +194,50 @@ nav a.active {
 #about {
   padding: 4rem 2rem;
   background-color: var(--pink);
+  color: var(--charcoal);
+}
+
+#about h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.about-text {
+  font-family: 'Poppins', sans-serif;
+  max-width: 700px;
+  text-align: center;
+}
+
+.about-photo img {
+  max-width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Responsive layout */
+@media(min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .about-text {
+    flex: 2;
+  }
+  .about-photo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* =====================
