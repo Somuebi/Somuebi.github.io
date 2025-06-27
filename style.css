@@ -146,6 +146,23 @@ nav a.active {
     font-size: 0.9rem;
   }
 
+  #about-blurb {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.learn-more-link {
+  color: var(--mint);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.learn-more-link:hover {
+  color: var(--pink);
+}
+
   /* MAP MARKERS */
 .map-marker {
   position: absolute;
@@ -183,55 +200,53 @@ nav a.active {
    ===================== */
 #about {
   padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
   background-color: var(--pink);
+}
+
+.about-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Sora', sans-serif;
+  margin-bottom: 2rem;
   color: var(--charcoal);
 }
 
-#about h2 {
-  font-family: 'Sora', sans-serif;
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.about-content {
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   align-items: center;
+  gap: 2rem;
+}
+
+.about-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--mint);
+  transition: transform 0.3s ease;
+}
+
+.about-photo:hover {
+  transform: scale(1.05);
 }
 
 .about-text {
-  font-family: 'Poppins', sans-serif;
-  max-width: 700px;
   text-align: center;
+  font-size: 1.1rem;
+  color: var(--charcoal);
 }
 
-.about-photo img {
-  max-width: 200px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  align-items: Left;
-  width: 50%;
-  height: 50%;
+.highlight {
+  color: var(--purple);
+  font-weight: bold;
 }
 
-/* Responsive layout */
-@media(min-width: 768px) {
-  .about-content {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-  .about-text {
-    flex: 2;
-  }
-  .about-photo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-}
 
 /* =====================
    💼 PROJECTS SECTION
