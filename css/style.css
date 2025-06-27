@@ -67,7 +67,7 @@ a {
     width: 90%;
     margin: 0 auto;
     background: url('/assets/images/world-map.jpg') no-repeat center;
-    background-size: contain;
+    background-size: fill;
 }
 
 .location-marker {
