@@ -1,112 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mmesoma Onwusika | Portfolio</title>
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Sora:wght@600&display=swap" rel="stylesheet" />
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="style.css" />
-
-  <!-- DONE: Add favicon link here -->
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io/favicon-16x16.png">
-  <link rel="manifest" href="assets/images/favicon_io/site.webmanifest">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mmesoma Onwusika | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-  <!-- =====================
-       🌐 HEADER SECTION
-       ===================== -->
-  <header>
-    <nav>
-      <!-- DONE: Create basic nav container -->
-      <!-- DONE: Add logo and nav links (Home, Projects, About, Contact) -->
-      <div class = "logo">MSO</div>
-      <div class = "nav-links">
-        <a class = "active" href = "#hero">Home</a>
-        <a href = "#about">About</a>
-        <a href = "#projects">Projects</a>
-        <a href = "#contact">Contact</a>
-      </div>
+    <nav class="navbar">
+        <a href="index.html" class="logo">MSO</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
-  </header>
 
-<!-- =====================
-     👋 HERO SECTION
-     ===================== -->
-<section id="hero">
-  <div class="hero-overlay">
-    <div class="hero-content">
-      <h1>Hi, I'm Mmesoma Onwusika </h1>
-      <p>Software Developer | Front-End Developer | UX/UI Enthusiast</p>
-      <a href="#projects" class="cta-btn">View My Work</a>
-    </div>
+    <main>
+        <section class="map-section">
+            <div class="map-container" id="worldMap">
+                <!-- Markers will be added via JavaScript -->
+            </div>
+        </section>
 
-    <!-- Tooltip markers on the map -->
-    <div class="map-marker" style="top: 40%; left: 25%;" data-tooltip="Worcester, MA – WPI Class of 2028"></div>
-    <!-- Add more as needed -->
-    </div>
-    <section id="about-blurb">
-      <p>
-        I'm a passionate front-end developer and UX/UI enthusiast with a global journey that shapes my creativity and perspective. 
-        <a href="#about" class="learn-more-link">Learn more →</a>
-      </p>
-    </section>
-</section>
+        <section class="projects-preview">
+            <h2>Featured Projects</h2>
+            <div class="carousel">
+                <!-- Carousel items will be added via JavaScript -->
+            </div>
+            <a href="projects.html" class="btn">View All Projects</a>
+        </section>
+    </main>
 
-
-  <!-- =====================
-       🙋 ABOUT SECTION
-       ===================== -->
-  <section id="about">
-    <!-- DONE: Basic section setup -->
-    <!-- DONE: Add a bio, your story, and a picture if desired -->
-    <h2 class="about-heading">About Me</h2>
-    <div clas="about-container">
-      <img src="./assets/images/me.jpg" alt="Mmesoma Onwusika" class="about-image">
-      <div class="about-text">
-        <p> 
-          Hi! I'm <span class="highlight">Mmesoma Onwusika</span> — a developer with a love for clean code, sleek design, and human-centered solutions. 
-          I was <span class="highlight">born and raised in Nigeria</span>, educated in <span class="highlight">Georgia</span> and <span class="highlight">Massachusetts</span>, and driven by global ideas.
-          <br><br>
-          My passion lies in <span class="highlight">front-end development</span> and <span class="highlight">UX/UI</span>, where I bring concepts to life using HTML, CSS, JavaScript, and a design-first mindset...
-        </p>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- =====================
-       💼 PROJECTS SECTION
-       ===================== -->
-  <section id="projects">
-    <!-- DONE: Section wrapper in place -->
-    <!-- TODO: Add project cards (image, title, tech stack, link) -->
-    <!-- TODO: Make it responsive and interactive (hover/fade) -->
-  </section>
-
-  <!-- =====================
-       📬 CONTACT SECTION
-       ===================== -->
-  <section id="contact">
-    <!-- DONE: Section wrapper -->
-    <!-- TODO: Add contact form or mailto link -->
-    <!-- TODO: Include social media icons (GitHub, LinkedIn, etc.) -->
-  </section>
-
-  <!-- =====================
-       🚀 FOOTER
-       ===================== -->
-  <footer>
-    <!-- DONE: Footer wrapper in place -->
-    <!-- TODO: Add copyright -->
-    <!-- Optional: Add back-to-top button -->
-  </footer>
-
-  <script src="bts.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
