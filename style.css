@@ -212,6 +212,8 @@ nav a.active {
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   align-items: Left;
+  width: 50%;
+  height: 50%;
 }
 
 /* Responsive layout */
