@@ -52,7 +52,7 @@ a {
 }
 
 .nav-links a:hover {
-    color: var(--purple);
+    color: var(--mint);
 }
 
 /* Map Section */
@@ -187,6 +187,7 @@ a {
 /* About Page Specific */
 .about-page {
     padding-top: 100px;
+    background-color: var(--dark);
 }
 
 .highlight {
@@ -199,6 +200,7 @@ a {
     gap: 40px;
     align-items: center;
     padding: 2rem 5%;
+    color: var(--white);
 }
 
 .about-text {
