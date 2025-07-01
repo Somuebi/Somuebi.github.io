@@ -2,19 +2,40 @@ document.addEventListener('DOMContentLoaded', function() {
     const locations = [
         {
             name: "Paris, France",
-            top: "45%",  // Adjust these percentages to position correctly on your map
+            top: "38%",  // Adjust these percentages to position correctly on your map
             left: "48%",
             image: "assets/paris.jpg",
             description: "Studied art history here for 3 months in 2022..."
         },
         {
-            name: "Tokyo, Japan",
-            top: "40%",
-            left: "78%",
+            name: "Singapore",
+            top: "60%",
+            left: "74%",
             image: "assets/tokyo.jpg",
-            description: "Lived here while working on a tech project in 2020..."
+            description: "Spent a week here for a literature competition got immersed in the culture and history"
+        },
+        {
+            name: "Nigeria",
+            top: "58%",
+            left: "50%",
+            image: "assets/images/nigeria.jpg",
+            description: "Born and raised Here"
+        },
+        {
+            name: "Georgia, USA",
+            top: "45%",
+            left: "26%",
+            image: "assets/images/tokyo.jpg",
+            description: "Junior and Senior Year at Boarding School. Graduated high school at Rabun Gap Nacoochee School"
+        },
+        {
+            name: "Worcester, USA",
+            top: "42%",
+            left: "29%",
+            image: "assets/images/worcester.jpg",
+            description: "WPI Class of 2028"
         }
-        // Add more locations as needed
+        
     ];
 
     const mapContainer = document.getElementById('worldMap');
