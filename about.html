@@ -3,21 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Mmesoma Onwusika</title>
+    <title>About Me | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="logo">MSO</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="projects.html">Projects</a>
             <a href="contact.html">Contact</a>
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="about-page">
         <section class="about-section">
             <div class="container">
@@ -30,20 +43,21 @@
                         <p>I specialize in <span class = "highlight">Python, HTML, CSS, JavaScript and Java</span>, and have a strong eye for <span class = "highlight">design, usability, and user experience</span>. I enjoy translating ideas into functional, elegant interfaces and believe code should feel as refined as it looks.</p>
                         <p>At my core, I value <span class = "highlight">empathy, intention, simplicity and innovation</span>. I want users to feel understood, not overwhelmed.</p>
                         <p>If you're looking  for someone who's passionate about <span class = "highlight">user experience, innovation</span>, and building solutions with purpose let's connect.</p>
+                        
                         <div class="skills">
                             <h3>My Skills</h3>
                             <div class="skill-tags">
-                                <span>UI/UX</span>
-                                <span>JavaScript</span>
-                                <span>Java</span>
-                                <span>Python</span>
-                                <span>HTML/CSS</span>
-                                <span>RStudio</span>
-                                <span>Git</span>
-                                <span>C/C++</span>
-                                <span>Project Management</span>
-                                <span>Team Leadership</span>
-                                <span>Communication</span>
+                                <span style="--delay:1">UI/UX</span>
+                                <span style="--delay:2">JavaScript</span>
+                                <span style="--delay:3">Java</span>
+                                <span style="--delay:4">Python</span>
+                                <span style="--delay:5">HTML/CSS</span>
+                                <span style="--delay:6">RStudio</span>
+                                <span style="--delay:7">Git</span>
+                                <span style="--delay:8">C/C++</span>
+                                <span style="--delay:9">Project Management</span>
+                                <span style="--delay:10">Team Leadership</span>
+                                <span style="--delay:11">Communication</span>
                             </div>
                         </div>
                     </div>
@@ -54,7 +68,22 @@
             </div>
         </section>
     </main>
-
-    <script src="js/main.js"></script>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2025 Mmesoma Onwusika. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html>

@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Georgia, USA",
             top: "45%",
             left: "26%",
-            image: "assets/images/tokyo.jpg",
-            description: "Junior and Senior Year at Boarding School. Graduated high school at Rabun Gap Nacoochee School"
+            image: "assets/images/georgia.jpg",
+            description: "Graduated high school at Rabun Gap Nacoochee School"
         },
         {
             name: "Worcester, USA",
