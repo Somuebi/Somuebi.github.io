@@ -3,18 +3,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Sample projects data - replace with your actual projects
     const projects = [
         {
-            title: "E-Commerce Website",
-            description: "A full-stack e-commerce platform with React and Node.js",
-            image: "assets/project1.jpg",
-            tags: ["React", "Node.js", "MongoDB"]
+            title: "Leaks in The Pipe : Black Women in STEM",
+            description: "A interactive scrollytelling web app using svelte to showcase the decrease that occured in Black women in the STEM industry",
+            //image: "assets/images/project-1.png",
+            tags: ["HTML", "CSS", "Svelte", "Javascript", "Intersection Observer API"]
         },
         {
-            title: "Portfolio Design",
-            description: "Minimalist portfolio design for a photographer",
-            image: "assets/project2.jpg",
-            tags: ["HTML/CSS", "JavaScript", "GSAP"]
+            title: "To-Do List",
+            description: "A simple to-do list using python and tkinter",
+            image: "assets/images/project-2.png",
+            tags: ["Python", "Tkinter"]
+        },
+        {
+            title: "Timeline Creator",
+            description: "A simple timeline creator built using HTML, CSS, and JavaScript",
+            image: "assets/images/project-3.png",
+            tags: ["HTML", "CSS", "Javascript"]
         }
-        // Add more projects as needed
     ];
 
     const carousel = document.querySelector('.carousel');

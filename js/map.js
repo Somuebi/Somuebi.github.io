@@ -4,35 +4,35 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Paris, France",
             top: "38%",  // Adjust these percentages to position correctly on your map
             left: "48%",
-            image: "assets/paris.jpg",
+            //image: "assets/paris.jpg",
             description: "Studied art history here for 3 months in 2022..."
         },
         {
             name: "Singapore",
             top: "60%",
             left: "74%",
-            image: "assets/tokyo.jpg",
+            //image: "assets/tokyo.jpg",
             description: "Spent a week here for a literature competition got immersed in the culture and history"
         },
         {
             name: "Nigeria",
             top: "58%",
             left: "50%",
-            image: "assets/images/nigeria.jpg",
+            //image: "assets/images/nigeria.jpg",
             description: "Born and raised Here"
         },
         {
             name: "Georgia, USA",
             top: "45%",
             left: "26%",
-            image: "assets/images/georgia.jpg",
+            //image: "assets/images/georgia.jpg",
             description: "Graduated high school at Rabun Gap Nacoochee School"
         },
         {
             name: "Worcester, USA",
             top: "42%",
             left: "29%",
-            image: "assets/images/worcester.jpg",
+            //image: "assets/images/worcester.jpg",
             description: "WPI Class of 2028"
         }
         

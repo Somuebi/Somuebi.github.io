@@ -45,14 +45,47 @@ a {
     color: var(--purple);
 }
 
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
 .nav-links a {
-    margin-left: 2rem;
+    color: var(--purple);
+    text-decoration: none;
     font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--mint);
+.nav-links a {
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--mint);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    color: var(--mint)
+}
+
+.nav-links a.active {
+    color: var(--purple);
 }
 
 /* Map Section */
@@ -161,12 +194,58 @@ a {
     scroll-snap-type: x mandatory;
 }
 
+/* In style.css */
+
 .carousel-item {
-    min-width: 300px;
+    /* We make the item a flex container to easily manage the image and text */
+    display: flex;
+    flex-direction: column; 
+    
+    /* Set a max-height for the entire card */
+    max-height: 400px; 
+    
     scroll-snap-align: start;
     border: 1px solid var(--pink);
     border-radius: 10px;
     overflow: hidden;
+    background-color: var(--white); /* Optional: gives the card a background */
+}
+
+.carousel-item img {
+    /* This is the key property. It ensures the entire image fits without being cropped */
+    object-fit: contain; 
+    
+    /* Let the height be 100% of its container, up to the max-height */
+    height: 100%; 
+    
+    /* Let the browser determine the width to maintain the aspect ratio */
+    width: auto; 
+}
+
+/* This class is from your main.js file and needs styling */
+.project-info {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    border-top: 1px solid var(--pink); /* Separates text from image */
+}
+
+.project-info h3 {
+    margin-top: 0;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    background: var(--mint);
+    color: var(--dark);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
 }
 
 .btn {
