@@ -1,344 +1,238 @@
 :root {
-    --white: #ffffff;
-    --mint: #adffbf;
-    --purple: #850aff;
-    --pink: #f8dde4;
-    --dark: #232528;
+  --white: #ffffff;
+  --mint: #adffbf;
+  --purple: #850aff;
+  --pink: #f8dde4;
+  --dark: #232528;
 }
 
-/* Base Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    color: var(--dark);
-    background-color: var(--white);
-    line-height: 1.6;
+body { 
+    font-family: 'Poppins', sans-serif; 
+    margin: 0; color: var(--dark); 
+    background-color: var(--white); 
+    line-height: 1.6; 
+} 
+
+h1, h2, h3, h4 { 
+    font-family: 'Sora', sans-serif; 
+    color: var(--dark); 
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Sora', sans-serif;
-    color: var(--dark);
+a { 
+    text-decoration: none; 
+    color: var(--purple); 
 }
 
-a {
-    text-decoration: none;
-    color: var(--purple);
-}
-
-/* Navigation */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    position: fixed;
-    width: 90%;
-    background-color: var(--white);
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--purple);
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    color: var(--purple);
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s;
-}
-
-.nav-links a {
-    color: var(--purple);
-    text-decoration: none;
-    font-weight: 500;
-    position: relative;
-    padding-bottom: 5px;
-    transition: color 0.3s;
-}
-
-.nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--mint);
-    transition: width 0.3s ease;
-}
 
 .nav-links a:hover::after {
-    width: 100%;
-    color: var(--mint)
+  width: 100%;
 }
 
-.nav-links a.active {
-    color: var(--purple);
-}
-
-/* Map Section */
+/* ——— Map & Hero Section ——— */
 .map-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    padding-top: 80px; /* Adjust based on your navbar height */
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding-top: 80px; /* navbar height */
 }
 
 .map-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../assets/images/World.svg') no-repeat center;
-    background-size: cover;
+  position: absolute;
+  inset: 0;
+  background: url('../assets/images/World.svg') no-repeat center/cover;
 }
 
 .map-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(35, 37, 40, 0.9); /* Using your dark color with 70% opacity */
-    z-index: 1;
-    transition: background-color 0.3s ease;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(35, 37, 40, 0.9);
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .map-overlay:hover {
-    background-color: rgba(35, 37, 40, 0.5); /* Lighter on hover */
+  background-color: rgba(35, 37, 40, 0.5);
 }
 
-.location-marker {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: var(--purple);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 2;
-    transition: all 0.3s ease;
+.location-marker { 
+    position: absolute; 
+    width: 12px; 
+    height: 12px; 
+    background: rgba(133, 10, 255, 0.8); 
+    border-radius: 50%; 
+    transform: translate(-50%, -50%); 
+    cursor: pointer; 
+    z-index: 2; 
+    transition: all 0.3s ease; 
+} 
+
+.location-marker:hover { 
+    transform: translate(-50%, -50%) scale(1.5); 
+    box-shadow: 0 0 0 4px rgba(133, 10, 255, 0.3); 
+} 
+
+.location-bubble { 
+    position: absolute; 
+    background: var(--white); 
+    border: 2px solid var(--purple); 
+    border-radius: 10px; 
+    padding: 15px; 
+    width: 220px; 
+    display: none; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15); 
+    z-index: 3; 
+    bottom: 30px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+} 
+
+.location-bubble::after { 
+    content: ''; 
+    position: absolute; 
+    top: -10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    border-width: 0 10px 10px 10px; 
+    border-style: solid; 
+    border-color: transparent transparent var(--white) transparent; 
+} 
+
+.location-bubble h3 { 
+    margin: 0 0 5px 0; 
+    color: var(--purple); 
+} 
+
+.location-bubble p { 
+    margin: 0; 
+    font-size: 0.9rem; 
 }
 
-.location-marker:hover {
-    transform: translate(-50%, -50%) scale(1.5);
-    box-shadow: 0 0 0 4px rgba(133, 10, 255, 0.3);
+/* Hero text above the map */
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
 }
 
-.location-bubble {
-    position: absolute;
-    background: var(--white);
-    border: 2px solid var(--purple);
-    border-radius: 10px;
-    padding: 15px;
-    width: 220px;
-    display: none;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    z-index: 3;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+.hero-content h1 {
+  margin: 0;
+  color: var(--pink);
+  font-size: 4rem;
+  font-weight: 700;
 }
 
-.location-bubble::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 0 10px 10px 10px;
-    border-style: solid;
-    border-color: transparent transparent var(--white) transparent;
+.hero-content p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--mint);
 }
 
-.location-bubble img {
-    width: 100%;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.location-bubble h3 {
-    margin: 0 0 5px 0;
-    color: var(--purple);
-}
-
-.location-bubble p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* Projects Preview */
+/* ——— Projects Preview & Carousel ——— */
 .projects-preview {
-    padding: 4rem 5%;
-    text-align: center;
+  padding: 4rem 5%;
+  text-align: center;
 }
 
 .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 2rem;
-    padding: 2rem 0;
-    scroll-snap-type: x mandatory;
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem;
+  padding: 2rem 0;
+  scroll-snap-type: x mandatory;
 }
 
-/* In style.css */
-
 .carousel-item {
-    /* We make the item a flex container to easily manage the image and text */
-    display: flex;
-    flex-direction: column; 
-    
-    /* Set a max-height for the entire card */
-    max-height: 400px; 
-    
-    scroll-snap-align: start;
-    border: 1px solid var(--pink);
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: var(--white); /* Optional: gives the card a background */
+  flex: 0 0 300px;      /* fixed width card */
+  display: grid;
+  grid-template-rows: 180px auto;
+  width: 300px;
+  flex-direction: column;
+  border: 1px solid var(--pink);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--white);
+  scroll-snap-align: start;
+}
+
+/* placeholder when no image is provided */
+.no-image {
+  background: var(--pink);
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0 1rem;
 }
 
 .carousel-item img {
-    /* This is the key property. It ensures the entire image fits without being cropped */
-    object-fit: contain; 
-    
-    /* Let the height be 100% of its container, up to the max-height */
-    height: 100%; 
-    
-    /* Let the browser determine the width to maintain the aspect ratio */
-    width: auto; 
+  width: 100%;
+  height: 180px;        /* fixed height for uniform cards */
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-/* This class is from your main.js file and needs styling */
 .project-info {
-    padding: 1rem 1.5rem;
-    text-align: left;
-    border-top: 1px solid var(--pink); /* Separates text from image */
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;              /* fill remaining space */
+}
+
+.project-info p {
+    flex: 1;
+    margin-bottom: 1rem;
 }
 
 .project-info h3 {
-    margin-top: 0;
+  margin: 0 0 0.5rem;
 }
 
 .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;     /* push tags to bottom if needed */
 }
 
 .tech-tag {
-    background: var(--mint);
-    color: var(--dark);
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+  background: var(--mint);
+  color: var(--dark);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: var(--purple);
-    color: var(--white);
-    border-radius: 5px;
-    margin-top: 2rem;
-    transition: background 0.3s;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background: var(--purple);
+  color: var(--white);
+  border-radius: 5px;
+  margin-top: 2rem;
+  transition: background 0.3s;
 }
 
 .btn:hover {
-    background: #6d00d6;
+  background: #6d00d6;
 }
 
-/*About Page*/
-/* About Page Specific */
-.about-page {
-    padding-top: 100px;
-    background-color: var(--mint);
-}
-
-.highlight {
-    color: var(--purple);
-    font-weight: 700;
-}
-
-.about-content {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    padding: 2rem 5%;
-    color: var(--dark);
-}
-
-.about-text {
-    flex: 1;
-    line-height: 1.8;
-}
-
-.about-image {
-    flex: 1;
-    text-align: center;
-}
-
-.about-image img {
-    width: 80%;
-    border-radius: 10px;
-    border: 3px solid var(--pink);
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+/* ——— Responsive ——— */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .nav-links {
     margin-top: 1rem;
-}
-
-.skill-tags span {
-    background: var(--pink);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-image img {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-    
-    .nav-links {
-        margin-top: 1rem;
-    }
-    
-    .nav-links a {
-        margin: 0 0.5rem;
-    }
-    
-    .map-container {
-        height: 60%;
-    }
+  }
+  .map-container {
+    height: 60%;
+  }
 }
