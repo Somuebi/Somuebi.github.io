@@ -1,0 +1,63 @@
+/* ---- Contact Page Layout ---- */
+.contact-page-content {
+    background-color: var(--mint);
+    padding: 120px 5% 4rem 5%; /* Top padding clears navbar, bottom gives space */
+    min-height: 80vh;
+}
+
+.contact-form-container {
+    max-width: 700px;
+    margin: 0 auto; /* Centers the form container */
+    padding: 2.5rem;
+    background-color: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-form-container h1 {
+    color: var(--purple);
+    margin-top: 0;
+}
+
+.contact-form-container p {
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+/* ---- Form Styling ---- */
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--purple);
+}
+
+/* Ensure the button uses the full width for a strong call to action */
+.contact-form-container .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}

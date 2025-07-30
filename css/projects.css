@@ -1,123 +1,139 @@
-/* All-Projects Section */
-.projects-gallery {
-  padding: 4rem 5%;
-  text-align: center;
+/* ---- Project Page: Interactive Tasting Card ---- */
+/* ---- Projects Page Layout ---- */
+.projects-page-content {
+    /* Adds space to clear your fixed navbar */
+    padding-top: 100px; 
 }
 
-.cards-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.projects-page-content h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem; /* Optional: adjust size as needed */
+    color: var(--purple);
+}
+/* The grid container for all your project cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    padding: 2rem 5%;
 }
 
-/* Base Card Styles */
+/* The main container - this sets up the 3D space */
 .project-card {
-  background: var(--card-bg, #FFF8E1);
-  border: 3px solid var(--card-border, #FFCB05);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
+    background-color: transparent;
+    height: 450px;
+    perspective: 1000px; /* Essential for the 3D effect */
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+/* This inner container is what actually flips */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-/* Header: Type & ID */
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  background: linear-gradient(135deg, #FFCB05, #3B4CCA);
-  color: #fff;
-  font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+/* The hover effect that triggers the flip */
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
 }
 
-/* Image Frame */
-.card-image img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-bottom: 2px solid var(--card-border, #FFCB05);
+/* Common styles for both front and back panels */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Hides the back of the panel */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-/* Title & Description */
-.card-body {
-  padding: 1rem;
-  flex: 1;
+/* --- Front Panel Styling (Revised) --- */
+
+.card-front {
+    color: var(--white);
+    /* We'll position the text content absolutely from here */
 }
 
-.project-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* REMOVED: opacity and z-index properties */
 }
 
-.project-description {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  color: #333;
+.card-front .front-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    
+    /* This gradient creates the dark area for text without needing z-index */
+    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+    
+    /* REMOVED: z-index property */
 }
 
-/* Stat Panel */
-.card-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  padding: 0 1rem 0.75rem;
+.card-front h2 {
+    color: var(--white);
+    margin-bottom: 0.25rem;
 }
 
-.stat {
-  background: #fff;
-  border: 1px solid var(--card-border, #FFCB05);
-  border-radius: 6px;
-  text-align: center;
-  padding: 0.4rem 0.6rem;
+/* --- Back Panel Styling --- */
+.card-back {
+    background-color: var(--pink);
+    color: var(--dark);
+    transform: rotateY(180deg); /* Flips the back panel initially */
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.stat-name {
-  display: block;
-  font-size: 0.7rem;
-  color: #666;
+.card-back .back-content {
+    text-align: center;
 }
 
-.stat-value {
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: #222;
+.card-back h3 {
+    color: var(--purple);
+    margin-top: 0;
 }
 
-/* Footer CTA */
-.card-footer {
-  background: #FFE082;
-  padding: 0.75rem 1rem;
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.card-footer .btn {
-  background: #3B4CCA;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: background 0.3s;
+.card-back li {
+    background: var(--mint);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
 
-.card-footer .btn:hover {
-  background: #2A3290;
+.card-back h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 
+.card-back p {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    margin-bottom: 1.5rem;
+}
 
-@media (max-width: 480px) {
-  .projects-grid {
+.card-links {
+    display: flex;
+    justify-content: center;
     gap: 1rem;
-  }
-  .project-card {
-    padding: 1rem;
-  }
 }
+
