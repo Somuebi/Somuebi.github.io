@@ -6,48 +6,122 @@
     <title>Contact Me | Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar-footer.css">
+    <link rel = "stylesheet" href = "css/style.css">
+    <link rel = "stylesheet" href = "css/navbar-footer.css">
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="logo">MSO</a>
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="active">Contact</a>
         </div>
     </nav>
 
+    <!-- Contact Content -->
     <main class="contact-page-content">
-        <div class="contact-form-container">
-            <h1>Get in Touch</h1>
-            <p>Have a question or want to work together? Leave a message!</p>
-            <form action="https://formspree.io/f/mvgqqaro" method="POST">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Get in <span class="highlight">Touch</span></h1>
+                <p>Have a question or want to work together? I'd love to hear from you! Feel free to reach out through the form or contact me directly.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h2>Send Me a Message</h2>
+                    <form action="https://formspree.io/f/mvgqqaro" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Type your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
+                
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Email</h3>
+                            <a href="mailto:onwusikammesoma@gmail.com">onwusikammesoma@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>Toronto, Canada</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h3>Phone</h3>
+                            <p>+1 (647) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-contact">
+                        <a href="https://github.com/Somuebi" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mmesoma-onwusika" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
+            </div>
         </div>
     </main>
-
-   <footer>
+    
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <div class="social-links">
-                <a href="https://github.com/Somuebi"><i class="fab fa-github"></i></a>
-                <a href="www.linkedin.com/in/mmesoma-onwusika"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Somuebi" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mmesoma-onwusika" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
             </div>
             <p>&copy; 2025 Mmesoma Onwusika. All rights reserved.</p>
         </div>
@@ -55,6 +129,6 @@
     
     <!-- JavaScript Files -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
