@@ -1,4 +1,11 @@
-/* ---- Project Page: Interactive Tasting Card ---- */
+:root {
+    --white: #ffffff;
+    --mint: #adffbf;
+    --purple: #850aff;
+    --pink: #f8dde4;
+    --dark: #232528;
+}
+
 /* ---- Projects Page Layout ---- */
 .projects-page-content {
     /* Adds space to clear your fixed navbar */
@@ -135,5 +142,9 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+footer {
+    color: var(--white);
 }
 

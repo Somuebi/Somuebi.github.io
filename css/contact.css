@@ -6,9 +6,6 @@
   --dark: #232528;
 }
 
-h1 {
-    color: var(--mint);
-}
 
 body {
   font-family: "Poppins", sans-serif;
@@ -117,6 +114,7 @@ body {
   font-size: 3.5rem;
   margin-bottom: 20px;
   position: relative;
+  color: var(--mint);
 }
 
 .contact-header h1::after {

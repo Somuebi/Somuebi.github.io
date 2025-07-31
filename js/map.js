@@ -2,13 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   const locations = [
     {
-      name: "Paris, France",
-      top: "38%",
-      left: "48%",
-      //image: "assets/images/paris.jpg",
-      description: "Studied art history here for 3 months in 2022."
-    },
-    {
       name: "Singapore",
       top: "60%",
       left: "74%",
