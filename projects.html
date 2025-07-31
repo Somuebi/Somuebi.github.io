@@ -24,9 +24,18 @@
     <main class = "projects-page-content">
         <h1>Projects</h1>
 
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="Front-end">Front-end</button>
+            <button class="filter-btn" data-filter="UX/UI">UX/UI</button>
+            <button class="filter-btn" data-filter="Software Apps">Software Apps</button>
+            <button class="filter-btn" data-filter="Web Apps">Web Apps</button>
+            <!-- Add more as needed -->
+        </div>
+
         <div class="projects-grid">
 
-            <div class="project-card">
+            <div class="project-card" data-tags = "Front-end all">
                 <div class="card-inner">
 
                     <div class="card-front">
@@ -74,5 +83,6 @@
     
     <!-- JavaScript Files -->
     <script src="js/main.js"></script>
+    <script src="js/projects.js"></script>
 </body>
 </html>
