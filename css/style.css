@@ -95,7 +95,7 @@ a {
     transform: translateX(-50%); 
     border-width: 0 10px 10px 10px; 
     border-style: solid; 
-    border-color: transparent transparent var(--white) transparent; 
+    border-color: transparent transparent transparent transparent; 
 } 
 
 .location-bubble h3 { 
