@@ -6,19 +6,19 @@ document.addEventListener('DOMContentLoaded', function() {
       description: "An interactive scrollytelling web app using Svelte to showcase the decline of Black women in STEM.",
       image: "assets/images/project-1.png",
       tags: ["HTML", "CSS", "Svelte", "JavaScript", "Intersection Observer API"]
-    },
-    {
+    }
+    /*{
       title: "To-Do List",
       description: "A simple to-do list using Python and Tkinter.",
       image: "assets/images/project-2.png",
       tags: ["Python", "Tkinter"]
-    },
+    },-->
     {
       title: "Timeline Creator",
       description: "A timeline creator built with HTML, CSS, and JavaScript.",
       image: "assets/images/project-3.png",
       tags: ["HTML", "CSS", "JavaScript"]
-    }
+    }*/
   ];
 
   const carousel = document.querySelector('.carousel');
