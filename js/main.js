@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       tags: ["HTML", "CSS", "Svelte", "JavaScript", "Intersection Observer API"]
     },
     {
-      title: "Rate My DOrm",
+      title: "Rate My Dorm",
       description: "An interactive web platform built with Figma, FastAPI, and MongoDB to help WPI students find the on-campus dorm that best fits their needs.",
       image: "assets/images/project-2.png",
       tags: ["Project Management", "Python", "MongoDB", "FASTAPI", "HTML", "Jinja", "FIgma", "Javascript", "CSS"]
