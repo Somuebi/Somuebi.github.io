@@ -6,14 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
       description: "An interactive scrollytelling web app using Svelte to showcase the decline of Black women in STEM.",
       image: "assets/images/project-1.png",
       tags: ["HTML", "CSS", "Svelte", "JavaScript", "Intersection Observer API"]
+    },
+    {
+      title: "Rate My DOrm",
+      description: "An interactive web platform built with Figma, FastAPI, and MongoDB to help WPI students find the on-campus dorm that best fits their needs.",
+      image: "assets/images/project-2.png",
+      tags: ["Project Management", "Python", "MongoDB", "FASTAPI", "HTML", "Jinja", "FIgma", "Javascript", "CSS"]
     }
     /*{
-      title: "To-Do List",
-      description: "A simple to-do list using Python and Tkinter.",
-      image: "assets/images/project-2.png",
-      tags: ["Python", "Tkinter"]
-    },-->
-    {
       title: "Timeline Creator",
       description: "A timeline creator built with HTML, CSS, and JavaScript.",
       image: "assets/images/project-3.png",
