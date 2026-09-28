@@ -24,13 +24,25 @@
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2.5rem;
     padding: 2rem 5%;
+    /* Base row height so spanning cards can grow without shrinking neighbors */
+    grid-auto-rows: 320px;
 }
 
 /* The main container - this sets up the 3D space */
 .project-card {
     background-color: transparent;
-    height: 450px;
+    /* Fill the grid cell height (grid-auto-rows controls the base height) */
+    height: 100%;
+    min-height: 0;
     perspective: 1000px; /* Essential for the 3D effect */
+}
+
+/* Dynamic sizing for specific project cards (e.g., the second project) */
+
+/* On wider viewports, let the dynamic card span two columns/rows to increase visual weight */
+@media (min-width: 1100px) {
+    .projects-grid { grid-auto-flow: dense; }
+    .project-card.dynamic-size { grid-column: span 2; grid-row: span 2; }
 }
 
 /* This inner container is what actually flips */
@@ -73,17 +85,61 @@
     /* REMOVED: opacity and z-index properties */
 }
 
+/* Front overlay: title + subtitle over the image */
 .card-front .front-content {
     position: absolute;
-    bottom: 0;
     left: 0;
     right: 0;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-    
-    /* This gradient creates the dark area for text without needing z-index */
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    
-    /* REMOVED: z-index property */
+    bottom: 0;
+    padding: 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 0.25rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0.15) 40%, transparent);
+    box-sizing: border-box;
+    max-height: 45%; /* reserve the lower portion of the image for text */
+    overflow: hidden;
+}
+
+.card-front .front-content h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    line-height: 1.05;
+}
+
+.card-front .front-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    opacity: 0.95;
+}
+
+/* Prevent front content from overflowing the card and allow scrolling when needed */
+.project-card.dynamic-size .card-front .front-content {
+    max-height: 55%;
+}
+
+/* Adjustments for the dynamic-size project card to prevent text clipping */
+.project-card.dynamic-size .card-front .front-content {
+    padding: 1rem; /* reduce padding to give more space for text */
+    max-height: 48%; /* reserve nearly half the card for text */
+    overflow: auto; /* allow the text area to scroll if needed */
+}
+
+.project-card.dynamic-size .card-front h2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.project-card.dynamic-size .card-front p {
+    font-size: 0.9rem;
+    line-height: 1.25;
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .project-card.dynamic-size .card-front h2 { font-size: 1rem; }
+    .project-card.dynamic-size .card-front p { font-size: 0.85rem; }
 }
 
 .card-front h2 {
@@ -96,14 +152,37 @@
     background-color: var(--pink);
     color: var(--dark);
     transform: rotateY(180deg); /* Flips the back panel initially */
-    padding: 1.5rem;
+    padding: 1.25rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 .card-back .back-content {
     text-align: center;
+    overflow: auto;
+    flex: 1 1 auto;
+    padding-right: 0.5rem;
+}
+
+.card-back .tech-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.card-back .back-content h3 {
+    margin-top: 0;
+}
+
+.card-back .card-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 .card-back h3 {
