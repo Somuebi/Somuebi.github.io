@@ -1,56 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mmesoma Onwusika | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar-footer.css">
-
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon_io /apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_io /favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon_io /favicon-16x16.png">
-    <link rel="manifest" href="assets/images/favicon_io /site.webmanifest">
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mmesoma Onwusika | Software Engineer</title>
+<meta name="description" content="Product-minded software engineer building user-focused software, from research and prototypes to shipped code.">
+<meta property="og:title" content="Mmesoma Onwusika | Software Engineer">
+<meta property="og:description" content="Product-minded software engineer. Projects, experience, and the places that shaped me.">
+<meta property="og:image" content="https://somuebi.github.io/assets/images/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <nav class="navbar">
-        <a href="index.html" class="logo">MSO</a>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <a class="logo" href="#top" aria-label="Home">MSO</a>
+  <nav aria-label="Primary">
+    <a href="#map">Journey</a>
+    <a href="#work">Work</a>
+    <a href="#involvement">Experience</a>
+    <a href="#contact">Contact</a>
+    <a class="pill" href="assets/Mmesoma_Onwusika_Resume.pdf">Resume</a>
+  </nav>
+</header>
 
-    <main>
-        <section class="map-section">
-            <div class="map-overlay"></div>
+<main id="main">
+  <section class="hero" id="top">
+    <p class="eyebrow">Software Engineer &middot; Full-Stack &amp; Front-End &middot; Product-Minded</p>
+    <h1>Mmesoma <em>Onwusika</em></h1>
+    <p class="lead">I build user-focused software, from research and prototypes to shipped code. Listening first, building second.</p>
+    <ul class="strip">
+      <li>Microsoft Explore Intern</li>
+      <li>GoatHacks Best Community Hack</li>
+      <li>Computer Science, WPI &rsquo;28</li>
+    </ul>
+  </section>
 
-            <!-- Hero Text Over Map -->
-            <div class="hero-content">
-                <h1>Mmesoma Onwusika</h1>
-                <p>Software Engineer | Front-End Developer | UI/UX Enthusiast</p>
-            </div>
+  <section id="map" class="block">
+    <h2>Places that made me</h2>
+    <p class="sub">My range comes from where I&rsquo;ve lived, studied, and worked. Each stop taught me something I still build with.</p>
+    <svg id="map-svg" role="img" aria-label="World map showing Nigeria, Georgia, Massachusetts, and Washington"></svg>
+    <ol id="places" class="places"></ol>
+  </section>
 
-            <div class="map-container" id="worldMap">
-            <!-- Markers will be added via JavaScript -->
-            </div>
-        </section>
+  <section id="work" class="block">
+    <h2>Selected work</h2>
+    <article class="row">
+      <p class="meta">Mar&ndash;May 2026</p>
+      <div>
+        <h3>Enterprise Web App for Hanover Insurance</h3>
+        <p>Led technical implementation for a 10-person Agile team building a cloud-hosted full-stack application with authentication, role-based access control, a CMS, analytics, and customizable dashboards. Coordinated frontend and backend teams to deliver on time.</p>
+        <p class="tags">React &middot; TypeScript &middot; Node &middot; PostgreSQL &middot; Prisma &middot; AWS</p>
+        <p class="links"><span>Case study coming soon</span></p>
+      </div>
+    </article>
+    <article class="row">
+      <p class="meta">Jan 2026</p>
+      <div>
+        <h3>Rate My Dorm <span class="badge">Best Community Hack</span></h3>
+        <p>A housing comparison platform for WPI students, built with a team of five at GoatHacks. I designed the Figma prototypes and integrated a FastAPI backend with MongoDB Atlas.</p>
+        <p class="tags">FastAPI &middot; MongoDB &middot; Python &middot; Figma</p>
+        <p class="links"><a href="https://rate-my-dorm-production.up.railway.app/search-dorms">Live site</a><a href="https://github.com/VZamora5/rate-my-dorm">Code</a></p>
+      </div>
+    </article>
+    <article class="row">
+      <p class="meta">Jul 2025</p>
+      <div>
+        <h3>Leaks in the Pipe</h3>
+        <p>A scrollytelling piece on the decline of Black women in STEM, using real-world data, scroll-triggered animation, and a focus on accessibility and narrative clarity.</p>
+        <p class="tags">Svelte &middot; JavaScript &middot; Intersection Observer</p>
+        <p class="links"><a href="https://somuebi.github.io/BWDC-Scrollytelling/">Live site</a><a href="https://github.com/Somuebi/BWDC-Scrollytelling">Code</a></p>
+      </div>
+    </article>
+  </section>
 
-        <section class="projects-preview">
-            <h2>Featured Projects</h2>
-            <div class="carousel">
-            <!-- Carousel items will be added via JavaScript -->
-            </div>
-            <a href="projects.html" class="btn">View All Projects</a>
-        </section>
-    </main>
-    
-    <script src="js/map.js"></script>
-    <script src="js/main.js"></script>
+  <section id="involvement" class="block">
+    <h2>Experience &amp; involvement</h2>
+    <article class="row">
+      <p class="meta">Summer 2026</p>
+      <div><h3>Microsoft &mdash; Explore Intern</h3><p>Software engineering and product management. Researched, designed, specified, and built a new persistent rewards experience, then presented it to stakeholders.</p></div>
+    </article>
+    <article class="row">
+      <p class="meta">WPI</p>
+      <div><h3>Admissions Associate</h3><p>Support open houses and admitted student days, help run information systems for prospective families, and welcome visitors at the admissions desk.</p></div>
+    </article>
+    <article class="row">
+      <p class="meta">2026 &ndash; Present</p>
+      <div><h3>NSBE &mdash; Pre-Collegiate Initiative Chair</h3><p>Building partnerships with local organizations and running K-12 STEM workshops, panels, and mentorship.</p></div>
+    </article>
+    <article class="row">
+      <p class="meta">2025 &ndash; Present</p>
+      <div><h3>African Student Association &mdash; Treasurer</h3><p>Plan budgets and submit funding requests to Student Government. Also a member of Women in Computer Science and the International Student Council.</p></div>
+    </article>
+  </section>
+
+  <section id="skills" class="block">
+    <h2>Toolkit</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Java, Python, JavaScript, TypeScript, SQL, C, C++</dd>
+      <dt>Web</dt><dd>React, Next.js, Svelte, Node.js, Express, REST APIs, accessibility</dd>
+      <dt>Data</dt><dd>PostgreSQL, Prisma, MongoDB</dd>
+      <dt>Design</dt><dd>Figma, prototyping, user research, wireframing</dd>
+      <dt>Tools</dt><dd>Git, AWS, Vercel, Render, Azure DevOps</dd>
+    </dl>
+  </section>
+</main>
+
+<footer id="contact" class="block">
+  <h2>Let&rsquo;s talk</h2>
+  <p class="sub">Open to conversations about internships and new opportunities.</p>
+  <p class="links big"><a href="mailto:mmeso-onwusika@outlook.com">Email</a><a href="https://www.linkedin.com/in/mmesoma-onwusika/">LinkedIn</a><a href="https://github.com/Somuebi">GitHub</a></p>
+  <p class="copy">&copy; <span id="yr">2026</span> Mmesoma Onwusika</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

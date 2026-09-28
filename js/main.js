@@ -1,79 +1,64 @@
-// main.js
-document.addEventListener('DOMContentLoaded', function() {
-  const projects = [
-    {
-      title: "Leaks in The Pipe : Black Women in STEM",
-      description: "An interactive scrollytelling web app using Svelte to showcase the decline of Black women in STEM.",
-      image: "assets/images/project-1.png",
-      tags: ["HTML", "CSS", "Svelte", "JavaScript", "Intersection Observer API"]
-    },
-    {
-      title: "Rate My Dorm",
-      description: "An interactive web platform built with Figma, FastAPI, and MongoDB to help WPI students find the on-campus dorm that best fits their needs.",
-      image: "assets/images/project-2.png",
-      tags: ["Project Management", "Python", "MongoDB", "FASTAPI", "HTML", "Jinja", "FIgma", "Javascript", "CSS"]
-    }
-    /*{
-      title: "Timeline Creator",
-      description: "A timeline creator built with HTML, CSS, and JavaScript.",
-      image: "assets/images/project-3.png",
-      tags: ["HTML", "CSS", "JavaScript"]
-    }*/
-  ];
+const places = [
+  { name: 'Nigeria', tag: 'Where it started', c: [8, 9.5], side: 1,
+    d: 'Born and raised here. It gave me a love for the space where logic meets creativity.' },
+  { name: 'Georgia', tag: 'First U.S. home', c: [-83.4, 34.97], side: -1,
+    d: 'High school at Rabun Gap-Nacoochee School taught me how to start fresh and build community.' },
+  { name: 'Massachusetts', tag: 'Where I build', c: [-71.8, 42.26], side: 1,
+    d: 'At WPI I study CS, lead in NSBE and ASA, work in admissions, and ship projects with teams.' },
+  { name: 'Washington', tag: 'Where I shipped', c: [-122.12, 47.67], side: -1,
+    d: 'Microsoft Explore internship: research, design, specs, and front-end code for real users.' }
+];
 
-  const carousel = document.querySelector('.carousel');
+document.getElementById('yr').textContent = new Date().getFullYear();
 
-  projects.forEach(project => {
-    const card = document.createElement('div');
-    card.className = 'carousel-item';
-
-    // Image slot
-    if (project.image) {
-        const img = document.createElement('img');
-        img.src = project.image;
-        img.alt = project.title;
-        img.loading = 'lazy';
-        card.appendChild(img);
-    } else {
-      // Optional: placeholder or empty div
-        const placeholder = document.createElement('div');
-        placeholder.className = 'no-image';
-        placeholder.textContent = 'No preview available';
-        card.appendChild(placeholder);
-    }
-
-    // Info block
-    const info = document.createElement('div');
-    info.className = 'project-info';
-
-    const h3 = document.createElement('h3');
-    h3.textContent = project.title;
-    info.appendChild(h3);
-
-    const p = document.createElement('p');
-    p.textContent = project.description;
-    info.appendChild(p);
-
-    const tagContainer = document.createElement('div');
-    tagContainer.className = 'tech-tags';
-    project.tags.forEach(t => {
-        const span = document.createElement('span');
-        span.className = 'tech-tag';
-        span.textContent = t;
-        tagContainer.appendChild(span);
-    });
-    info.appendChild(tagContainer);
-
-    card.appendChild(info);
-    carousel.appendChild(card);
-  });
-
-  // Smooth scrolling for on-page anchors
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', e => {
-      e.preventDefault();
-      document.querySelector(anchor.getAttribute('href'))
-              .scrollIntoView({ behavior: 'smooth' });
-    });
-  });
+const list = document.getElementById('places');
+places.forEach((p, i) => {
+  const li = document.createElement('li');
+  li.dataset.i = i;
+  li.innerHTML = `<small>0${i + 1} &middot; ${p.tag}</small><b>${p.name}</b><p>${p.d}</p>`;
+  list.appendChild(li);
 });
+
+const setOn = (i, on) => {
+  document.querySelectorAll(`[data-i="${i}"]`).forEach(el => el.classList.toggle('on', on));
+};
+list.querySelectorAll('li').forEach(li => {
+  li.addEventListener('mouseenter', () => setOn(li.dataset.i, true));
+  li.addEventListener('mouseleave', () => setOn(li.dataset.i, false));
+});
+
+if (window.d3 && window.topojson) {
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+    .then(r => r.json())
+    .then(world => {
+      const W = 960, H = 500;
+      const svg = d3.select('#map-svg').attr('viewBox', `0 0 ${W} ${H}`);
+      const proj = d3.geoNaturalEarth1().fitSize([W, H], { type: 'Sphere' });
+      const path = d3.geoPath(proj);
+
+      svg.append('path').attr('class', 'land')
+        .attr('d', path(topojson.feature(world, world.objects.land)));
+
+      for (let i = 0; i < places.length - 1; i++) {
+        svg.append('path').attr('class', 'arc').attr('d', path({
+          type: 'LineString', coordinates: [places[i].c, places[i + 1].c]
+        }));
+      }
+
+      places.forEach((p, i) => {
+        const [x, y] = proj(p.c);
+        const g = svg.append('g').attr('class', 'pin').attr('data-i', i)
+          .attr('transform', `translate(${x},${y})`).attr('tabindex', 0)
+          .on('mouseenter focus', () => setOn(i, true))
+          .on('mouseleave blur', () => setOn(i, false));
+        g.append('circle').attr('r', 12);
+        g.append('text').attr('dy', 4).text(i + 1);
+        g.append('text').attr('class', 'lbl').attr('dy', 5)
+          .attr('dx', p.side * 19).style('text-anchor', p.side > 0 ? 'start' : 'end')
+          .text(p.name);
+      });
+    })
+    .catch(() => document.getElementById('map-svg').remove());
+} else {
+  document.getElementById('map-svg').remove();
+}
