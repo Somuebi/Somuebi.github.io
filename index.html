@@ -18,6 +18,7 @@
 <header class="nav">
   <a class="logo" href="#top" aria-label="Home">MSO</a>
   <nav aria-label="Primary">
+    <a href="#hello">About</a>
     <a href="#map">Journey</a>
     <a href="#work">Work</a>
     <a href="#involvement">Experience</a>
@@ -37,14 +38,35 @@
       <li>GoatHacks Best Community Hack</li>
       <li>Computer Science, WPI &rsquo;28</li>
     </ul>
+    <p class="cta"><a class="btn" href="#work">View my work</a><a class="btn ghost" href="assets/Mmesoma_Onwusika_Resume.pdf">Resume</a></p>
     </div>
     <img class="headshot" src="assets/images/Professional-Headshot.JPG" alt="Portrait of Mmesoma Onwusika" width="360" height="450" fetchpriority="high">
+  </section>
+
+  <section id="hello" class="block">
+    <h2>A little more about me</h2>
+    <div class="about">
+      <p>I&rsquo;m a Computer Science student at Worcester Polytechnic Institute with minors in Entrepreneurship and Management Information Systems, passionate about building technology that is both technically thoughtful and meaningful to the people who use it.</p>
+      <p>Through my academic, personal, and professional experiences, I&rsquo;ve explored software engineering, front-end development, product thinking, and user-centered design. I have had the opportunity to work across Product Management and Software Engineering &mdash; conducting research, shaping product requirements, designing user experiences, navigating an existing codebase, and supporting implementation of a customer-facing experience.</p>
+      <p>Outside of internships, I enjoy building projects that challenge me to think about both the technical and human sides of software. Whether I&rsquo;m creating interactive data experiences, developing web applications, or exploring new technologies, I&rsquo;m especially interested in how thoughtful design and engineering can make complex information and experiences more accessible.</p>
+      <p>I&rsquo;m driven by continuous learning, collaboration, and growth, and I&rsquo;m excited to keep developing as an engineer, product thinker, and leader while building products with the people who use them in mind.</p>
+    </div>
+    <p class="ask">Ask me about&hellip;</p>
+    <div class="chips" role="group" aria-label="Topics">
+      <button class="chip" aria-pressed="false" data-a="I&rsquo;m from Lagos, Nigeria. A literature competition took me to Singapore, boarding school took me to Georgia, and college brought me to Massachusetts. Each place taught me to adapt quickly and listen first.">Growing up international</button>
+      <button class="chip" aria-pressed="false" data-a="Rate My Dorm won Best Community Hack because it solved a problem students really share. I like software that starts from a real person&rsquo;s need.">Building for community</button>
+      <button class="chip" aria-pressed="false" data-a="I chair NSBE&rsquo;s Pre-Collegiate Initiative, bringing STEM workshops and mentorship to K-12 students, and I serve as treasurer of the African Student Association.">Leading</button>
+      <button class="chip" aria-pressed="false" data-a="At Microsoft I interviewed stakeholders, prototyped, wrote specs, and shipped front-end code. I love seeing an idea through from research to release.">Product thinking</button>
+    </div>
+    <p id="ans" class="answer" aria-live="polite">Pick a topic to hear more.</p>
   </section>
 
   <section id="map" class="block">
     <h2>Places that made me</h2>
     <p class="sub">My range comes from where I&rsquo;ve lived, studied, and worked. Each stop taught me something I still build with.</p>
-    <svg id="map-svg" role="img" aria-label="World map showing Nigeria, Georgia, Massachusetts, and Washington"></svg>
+    <button id="play" class="btn ghost" type="button">&#9654; Play the journey</button>
+    <svg id="map-svg" role="img" aria-label="World map showing Lagos, Singapore, Georgia, Massachusetts, and Washington"></svg>
+    <p id="cap" class="cap" aria-live="polite"></p>
     <ol id="places" class="places"></ol>
   </section>
 

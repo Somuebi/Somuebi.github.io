@@ -53,6 +53,25 @@ h3{font:400 1.4rem/1.3 var(--serif);margin:0 0 .5rem}
 .skills dt{color:var(--mute);font-size:.85rem}.skills dd{margin:0}
 .links.big{font:400 1.4rem var(--serif);gap:2rem}
 .copy{margin:4rem 0 0;padding-bottom:3rem;font-size:.8rem;color:var(--mute)}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem;margin:1.75rem 0 0}
+.btn{display:inline-block;padding:.65rem 1.3rem;border-radius:99px;background:var(--ink);color:var(--bg);text-decoration:none;font:500 .9rem var(--sans);border:1px solid var(--ink);cursor:pointer;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.about{font:400 clamp(1.05rem,2vw,1.25rem)/1.65 var(--serif);max-width:38em;margin:1.25rem 0 2.5rem}
+.about p{margin:0 0 1.1rem}
+.ask{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:0 0 .75rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{font:400 .9rem var(--sans);color:var(--ink);background:none;border:1px solid var(--line);padding:.45rem 1.05rem;border-radius:99px;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--acc)}
+.chip[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:#fff}
+.answer{font:400 1.25rem/1.55 var(--serif);max-width:34em;min-height:5.5rem;margin:1.5rem 0 0;color:var(--mute)}
+#play{margin-bottom:1rem}
+.cap{font:400 1.1rem/1.5 var(--serif);min-height:3.4rem;max-width:40em;margin:0 0 1.5rem}
+.places img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;margin-bottom:.8rem}
+.pin{cursor:pointer}
+.row:hover .shot{transform:translateY(-3px)}.shot{transition:transform .35s}
+.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s,transform .7s}
+.js .reveal.in{opacity:1;transform:none}
 @media (max-width:760px){.hero{grid-template-columns:1fr}.headshot{order:-1;max-width:220px}}
 @media (max-width:640px){.nav nav a:not(.pill){display:none}.row,.skills{grid-template-columns:1fr;gap:.25rem}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none}*{transition:none!important;scroll-behavior:auto!important}}
